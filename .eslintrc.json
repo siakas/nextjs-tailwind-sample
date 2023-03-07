@@ -38,6 +38,16 @@
       }
     ],
 
+    // 型情報のみの import を import type に強制するルール
+    // デフォルトでは import { type ... } の書式になっているので、
+    // import type { ... } の書式に変更
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      {
+        "fixStyle": "separate-type-imports"
+      }
+    ],
+
     // オブジェクトの型定義にインターフェースまたは型エイリアスのどちらかを強制するルール
     // eslint-config-standard-with-typescript がインターフェースを強制しているのを無効化
     "@typescript-eslint/consistent-type-definitions": "off",
@@ -95,10 +105,15 @@
     ],
 
     // Boolean 値が期待される記述で、Boolean 型以外の使用を許可しないルール
-    // ここではオブジェクト、関数、null、undefined の場合には許容するよう設定
+    // デフォルト設定だと警告が過剰に思えるので、ルールを緩和
+    // ここでは string, number, オブジェクト、関数、null、undefined の場合には許容するよう設定
     "@typescript-eslint/strict-boolean-expressions": [
       "error",
       {
+        "allowString": true,
+        "allowNumber": true,
+        "allowNullableString": true,
+        "allowNullableNumber": true,
         "allowNullableObject": true
       }
     ],
