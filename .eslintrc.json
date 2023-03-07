@@ -8,7 +8,6 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:tailwindcss/recommended",
     "standard-with-typescript",
     "prettier"
   ],
@@ -23,8 +22,7 @@
     "react",
     "react-hooks",
     "import",
-    "unused-imports",
-    "tailwindcss"
+    "unused-imports"
   ],
   "rules": {
     // 任意の構文の間に空行を入れるかどうかの定義
